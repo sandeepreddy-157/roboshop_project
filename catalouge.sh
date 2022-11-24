@@ -22,10 +22,10 @@ useradd roboshop
 
 #So let's switch to the `roboshop` user and run the following commands.
 
-su - roboshop
 curl -s -L -o /tmp/catalogue.zip "https://github.com/roboshop-devops-project/catalogue/archive/main.zip"
 cd /home/roboshop
 unzip -o /tmp/catalogue.zip
+rm -rf catalogue
 mv catalogue-main catalogue
 cd /home/roboshop/catalogue
 npm install
