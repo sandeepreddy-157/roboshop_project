@@ -11,14 +11,14 @@
 
 #On CentOS-8
 
-sudo curl -sL https://rpm.nodesource.com/setup_lts.x | bash
-sudo yum install nodejs -y
+curl -sL https://rpm.nodesource.com/setup_lts.x | bash
+yum install nodejs -y
 
 #Let's now set up the catalogue application.
 #As part of operating system standards, we run all the applications and databases as a normal user but not with root user.
 #So to run the catalogue service we choose to run as a normal user and that user name should be more relevant to the project. Hence we will use `roboshop` as the username to run the service.
 
-sudo useradd roboshop
+useradd roboshop
 
 #So let's switch to the `roboshop` user and run the following commands.
 
