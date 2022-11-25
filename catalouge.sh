@@ -32,3 +32,12 @@ npm install
 
 #Update SystemD file with correct IP addresses
 #Update `MONGO_DNSNAME` with MongoDB Server IP
+
+sed 's/MONGO_DSNAME/happylearning.buzz/'  systemd.service
+
+# Now, lets set up the service with systemctl.
+
+mv /home/roboshop/catalogue/systemd.service /etc/systemd/system/catalogue.service
+systemctl daemon-reload
+systemctl start catalogue
+systemctl enable catalogue
