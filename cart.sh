@@ -35,7 +35,7 @@ npm install
 #Update `REDIS_ENDPOINT` with REDIS server IP Address
 #Update `CATALOGUE_ENDPOINT` with Catalogue server IP address
 
-sed -i -e 's/REDIS_ENDPOINT/redis.happylearning.buzz/' -e 's/CATALOGUE_ENDPOINT/catalogue.happylearning.buzz/' systemd.service
+sed -i -e 's/REDIS_ENDPOINT/redis.happylearning.buzz/' -e 's/CATALOGUE_ENDPOINT/catalogue.happylearning.buzz/' /home/roboshop/cart/systemd.service
 
 #Now, lets set up the service with systemctl.
 
