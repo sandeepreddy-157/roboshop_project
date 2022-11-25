@@ -22,7 +22,7 @@ yum install redis -y
 
 sed 's/127.0.0.1/0.0.0.0/' /etc/redis.conf; /etc/redis/redis.conf
 
-#3. Start Redis Database
+#3. enalbe and Start Redis Database
 
 systemctl enable redis
 systemctl start redis
