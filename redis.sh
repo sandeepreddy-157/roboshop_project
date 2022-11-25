@@ -20,7 +20,7 @@ yum install redis -y
 
 #Update the bind from 127.0.0.1 to 0.0.0.0 in config file /etc/redis.conf & /etc/redis/redis.conf
 
-sed 's/127.0.0.1/0.0.0.0/' /etc/redis.conf; /etc/redis/redis.conf
+sed -i -e 's/127.0.0.1/0.0.0.0/' /etc/redis.conf /etc/redis/redis.conf
 
 #3. enalbe and Start Redis Database
 
