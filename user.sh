@@ -21,7 +21,8 @@ useradd roboshop
 
 curl -s -L -o /tmp/user.zip "https://github.com/roboshop-devops-project/user/archive/main.zip"
 cd /home/roboshop
-unzip /tmp/user.zip
+unzip -o /tmp/user.zip
+rm -rf user
 mv user-main user
 cd /home/roboshop/user
 npm install
@@ -31,11 +32,11 @@ npm install
 #Update `REDIS_ENDPOINT` with Redis Server IP
 # Update `MONGO_ENDPOINT` with MongoDB Server IP
 
-sed -i -e 's/REDIS_ENDPOINT/redis.happylearning.buzz/' 's/MONGO_ENDPOINT/mongo.happylearning.buzz/' systemd.service
+sed -i -e 's/REDIS_ENDPOINT/redis.happylearning.buzz/' -e 's/MONGO_ENDPOINT/mongo.happylearning.buzz/' systemd.service
 
 #2. Now, lets set up the service with systemctl.
 
 mv /home/roboshop/user/systemd.service /etc/systemd/system/user.service
 systemctl daemon-reload
-systemctl enable user
 systemctl start user
+systemctl enable user
