@@ -25,7 +25,7 @@ dnf module disable mysql -y
 
 if [ $? -eq 0 ]
 then
-  echo SUCCESS
+  echo -e "\e[32m SUCCESS\e[0m"
 else
   echo FAILURE
 fi
@@ -35,7 +35,7 @@ echo "INSTALLING MYSQL SERVER"
 yum install mysql-community-server -y
 if [ $? -eq 0 ]
 then
-  echo SUCCESS
+  echo -e "\e[32m SUCCESS\e[0m"
 else
   echo FAILURE
 fi
@@ -45,7 +45,7 @@ echo "ENABLING MYSQL SERVICE"
 systemctl enable mysqld
 if [ $? -eq 0 ]
 then
-  echo SUCCESS
+  echo -e "\e[32m SUCCESS\e[0m"
 else
   echo FAILURE
 fi
@@ -55,7 +55,7 @@ echo "START MYSQL SERVICE"
 systemctl start mysqld
 if [ $? -eq 0 ]
 then
-  echo SUCCESS
+  echo -e "\e[32m SUCCESS\e[0m"
 else
   echo FAILURE
 fi
