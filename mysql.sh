@@ -23,7 +23,7 @@ systemctl enable mysqld
 systemctl start mysqld
 
 echo show databases | mysql -uroot -pRoboShop@
-if [$? -ne 0]
+if [ $? -ne 0 ]
 then
   echo "ALTER USER 'root'@'localhost' IDENTIFIED BY 'RoboShop@1';" > /tmp/root-pass-sql
   DEFAULT_PASSWORD=$(sudo grep 'A temporary password' /var/log/mysqld.log | awk '{print $NF}')
