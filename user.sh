@@ -1,7 +1,6 @@
 # 05-User
 
 #This service is responsible for User Logins and Registrations Service in RobotShop e-commerce portal.
-
 #This service is written in NodeJS, Hence need to install NodeJS in the system.
 
 #On CentOS-7
