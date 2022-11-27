@@ -10,6 +10,8 @@
 
 #On Centos-8
 
+echo "DOWNLOADING MYSQL REPO FILE"
+
 curl -s -L -o /etc/yum.repos.d/mysql.repo https://raw.githubusercontent.com/roboshop-devops-project/mysql/main/mysql.repo
 if [ $? -eq 0 ]
 then
@@ -18,7 +20,7 @@ else
   echo FAILURE
 fi
 
-
+echo "DISABLE MODULE FOR MYSQL 8 VERSION REPO"
 dnf module disable mysql -y
 
 if [ $? -eq 0 ]
@@ -29,6 +31,7 @@ else
 fi
 #Install MySQL
 
+echo "DOWNLOADING MYSQL SERVER"
 yum install mysql-community-server -y
 if [ $? -eq 0 ]
 then
@@ -38,7 +41,7 @@ else
 fi
 
 #Start MySQL
-
+echo "ENABLING MYSQL SERVICE"
 systemctl enable mysqld
 if [ $? -eq 0 ]
 then
@@ -46,6 +49,8 @@ then
 else
   echo FAILURE
 fi
+
+echo "START MYSQL SERVICE"
 
 systemctl start mysqld
 if [ $? -eq 0 ]
