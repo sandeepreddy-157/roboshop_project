@@ -31,7 +31,7 @@ else
 fi
 #Install MySQL
 
-echo "DOWNLOADING MYSQL SERVER"
+echo "INSTALLING MYSQL SERVER"
 yum install mysql-community-server -y
 if [ $? -eq 0 ]
 then
