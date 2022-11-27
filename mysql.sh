@@ -17,7 +17,7 @@ if [ $? -eq 0 ]
 then
   echo -e "\e[32m SUCCESS\e[0m"
 else
-  echo FAILURE
+  echo -e "\e[31m FAILURE\e[0m"
 fi
 
 echo "DISABLE MODULE FOR MYSQL 8 VERSION REPO"
@@ -27,7 +27,7 @@ if [ $? -eq 0 ]
 then
   echo -e "\e[32m SUCCESS\e[0m"
 else
-  echo FAILURE
+  echo -e "\e[31m FAILURE\e[0m"
 fi
 #Install MySQL
 
@@ -37,7 +37,7 @@ if [ $? -eq 0 ]
 then
   echo -e "\e[32m SUCCESS\e[0m"
 else
-  echo FAILURE
+  echo -e "\e[31m FAILURE\e[0m"
 fi
 
 #Start MySQL
@@ -47,7 +47,7 @@ if [ $? -eq 0 ]
 then
   echo -e "\e[32m SUCCESS\e[0m"
 else
-  echo FAILURE
+  echo -e "\e[31m FAILURE\e[0m"
 fi
 
 echo "START MYSQL SERVICE"
@@ -57,7 +57,7 @@ if [ $? -eq 0 ]
 then
   echo -e "\e[32m SUCCESS\e[0m"
 else
-  echo FAILURE
+  echo -e "\e[31m FAILURE\e[0m"
 fi
 
 echo show databases | mysql -uroot -pRoboShop@1
