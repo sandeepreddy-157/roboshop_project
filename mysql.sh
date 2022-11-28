@@ -13,7 +13,7 @@
 echo -e "\e[31m DOWNLOADING MYSQL REPO FILE\e[0m"
 
 curl -s -L -o /etc/yum.repos.d/mysql.repo https://raw.githubusercontent.com/roboshop-devops-project/mysql/main/mysql.repo
-if [ $? -eq 1 ]
+if [ $? -eq 0 ]
 then
   echo -e "\e[32m SUCCESS\e[0m"
 else
@@ -29,6 +29,7 @@ then
   echo -e "\e[32m SUCCESS\e[0m"
 else
   echo -e "\e[31m FAILURE\e[0m"
+  exit 1
 fi
 #Install MySQL
 
@@ -39,6 +40,7 @@ then
   echo -e "\e[32m SUCCESS\e[0m"
 else
   echo -e "\e[31m FAILURE\e[0m"
+  exit 1
 fi
 
 #Start MySQL
@@ -49,6 +51,7 @@ then
   echo -e "\e[32m SUCCESS\e[0m"
 else
   echo -e "\e[31m FAILURE\e[0m"
+  exit 1
 fi
 
 echo "START MYSQL SERVICE"
@@ -59,6 +62,7 @@ then
   echo -e "\e[32m SUCCESS\e[0m"
 else
   echo -e "\e[31m FAILURE\e[0m"
+  exit 1
 fi
 
 echo show databases | mysql -uroot -pRoboShop@1
