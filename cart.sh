@@ -11,14 +11,17 @@
 #On CentOS-8
 source common.sh
 curl -sL https://rpm.nodesource.com/setup_lts.x | bash
-yum install nodejs -y
+STAT $?
 
+yum install nodejs -y
+STAT $?
 #Let's now set up the cart application.
 
 #As part of operating system standards, we run all the applications and databases as a normal user but not with root user.
 #So to run the cart service we choose to run as a normal user and that user name should be more relevant to the project. Hence we will use `roboshop` as the username to run the service.
 
 useradd roboshop
+STAT $?
 
 #So let's switch to the roboshop user and run the following commands to download the application code and download application dependencies
 
@@ -33,7 +36,7 @@ cd cart
 
 PRINT " INSTALLING REQUIRED DEPENDENCIES FOR APP"
 npm install
-
+STAT $?
 
 #1. Update SystemD service file
 #Update `REDIS_ENDPOINT` with REDIS server IP Address
@@ -45,7 +48,10 @@ sed -i -e 's/REDIS_ENDPOINT/redis.happylearning.buzz/' -e 's/CATALOGUE_ENDPOINT/
 
 mv /home/roboshop/cart/systemd.service /etc/systemd/system/cart.service
 systemctl daemon-reload
+STAT $?
 
 PRINT "RESTARTING CART SERVICE"
 systemctl restart cart
+STAT $?
+
 systemctl enable cart
