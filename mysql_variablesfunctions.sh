@@ -28,20 +28,22 @@ stat() {
 
 echo -e "\e[31m DOWNLOADING MYSQL REPO FILE\e[0m"
 curl -s -L -o /etc/yum.repos.d/mysql.repo https://raw.githubusercontent.com/roboshop-devops-project/mysql/main/mysql.repo
-
 stat $?
 
 echo "DISABLE MODULE FOR MYSQL 8 VERSION REPO"
 dnf module disable mysql -y
+stat $?
 
 #Install MySQL
 
 echo "INSTALLING MYSQL SERVER"
 yum install mysql-community-server -y
+stat $?
 
 #Start MySQL
 echo "ENABLING MYSQL SERVICE"
 systemctl enable mysqld
+stat $?
 
 echo "START MYSQL SERVICE"
 
