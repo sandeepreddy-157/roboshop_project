@@ -16,61 +16,37 @@ if [ -z '$1']; then
 fi
 ROBOSHOP_MYSQL_PASSWORD=$1
 
+stat() {
+  if [ $1 -eq 0 ]
+  then
+    echo -e "\e[32m SUCCESS\e[0m"
+  else
+    echo -e "\e[31m FAILURE\e[0m"
+    exit 1
+  fi
+}
 
 echo -e "\e[31m DOWNLOADING MYSQL REPO FILE\e[0m"
-
 curl -s -L -o /etc/yum.repos.d/mysql.repo https://raw.githubusercontent.com/roboshop-devops-project/mysql/main/mysql.repo
-if [ $? -eq 0 ]
-then
-  echo -e "\e[32m SUCCESS\e[0m"
-else
-  echo -e "\e[31m FAILURE\e[0m"
-  exit 1
-fi
+
+stat $?
 
 echo "DISABLE MODULE FOR MYSQL 8 VERSION REPO"
 dnf module disable mysql -y
 
-if [ $? -eq 0 ]
-then
-  echo -e "\e[32m SUCCESS\e[0m"
-else
-  echo -e "\e[31m FAILURE\e[0m"
-  exit 1
-fi
 #Install MySQL
 
 echo "INSTALLING MYSQL SERVER"
 yum install mysql-community-server -y
-if [ $? -eq 0 ]
-then
-  echo -e "\e[32m SUCCESS\e[0m"
-else
-  echo -e "\e[31m FAILURE\e[0m"
-  exit 1
-fi
 
 #Start MySQL
 echo "ENABLING MYSQL SERVICE"
 systemctl enable mysqld
-if [ $? -eq 0 ]
-then
-  echo -e "\e[32m SUCCESS\e[0m"
-else
-  echo -e "\e[31m FAILURE\e[0m"
-  exit 1
-fi
 
 echo "START MYSQL SERVICE"
 
 systemctl start mysqld
-if [ $? -eq 0 ]
-then
-  echo -e "\e[32m SUCCESS\e[0m"
-else
-  echo -e "\e[31m FAILURE\e[0m"
-  exit 1
-fi
+stat $?
 
 echo show databases | mysql -uroot -p${ROBOSHOP_MYSQL_PASSWORD}
 if [ $? -ne 0 ]
