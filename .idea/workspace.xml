@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c3a98010-ea6c-4a94-b205-531f0bdb320c" name="Changes" comment="common script with variables and functions">
+      <change beforePath="$PROJECT_DIR$/cart.sh" beforeDir="false" afterPath="$PROJECT_DIR$/cart.sh" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2Hojt77dzlo16seb7qiSAuwuwiS" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/sandeepabbadi/git-repo/roboshop_project&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="roboshop_project" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="roboshop_project" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c3a98010-ea6c-4a94-b205-531f0bdb320c" name="Changes" comment="" />
+      <created>1668958541921</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1668958541921</updated>
+    </task>
+    <task id="LOCAL-00005" summary="mongodb service">
+      <created>1669267745894</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1669267745894</updated>
+    </task>
+    <task id="LOCAL-00006" summary="mongodb service">
+      <created>1669268270647</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1669268270647</updated>
+    </task>
+    <task id="LOCAL-00007" summary="catalouge service">
+      <created>1669285688976</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1669285688976</updated>
+    </task>
+    <task id="LOCAL-00008" summary="catalouge service">
+      <created>1669286111772</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1669286111772</updated>
+    </task>
+    <task id="LOCAL-00009" summary="catalouge service">
+      <created>1669286213683</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1669286213683</updated>
+    </task>
+    <task id="LOCAL-00010" summary="catalouge service">
+      <created>1669296884368</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1669296884368</updated>
+    </task>
+    <task id="LOCAL-00011" summary="catalouge service">
+      <created>1669358778853</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1669358778853</updated>
+    </task>
+    <task id="LOCAL-00012" summary="catalouge service">
+      <created>1669359634875</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1669359634875</updated>
+    </task>
+    <task id="LOCAL-00013" summary="redis service">
+      <created>1669359850752</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1669359850752</updated>
+    </task>
+    <task id="LOCAL-00014" summary="redis service">
+      <created>1669360093308</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1669360093308</updated>
+    </task>
+    <task id="LOCAL-00015" summary="redis service">
+      <created>1669360261428</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1669360261428</updated>
+    </task>
+    <task id="LOCAL-00016" summary="user service">
+      <created>1669362458129</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1669362458129</updated>
+    </task>
+    <task id="LOCAL-00017" summary="user service">
+      <created>1669362893954</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1669362893954</updated>
+    </task>
+    <task id="LOCAL-00018" summary="user service">
+      <created>1669363597284</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1669363597284</updated>
+    </task>
+    <task id="LOCAL-00019" summary="cart service">
+      <created>1669374804633</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1669374804633</updated>
+    </task>
+    <task id="LOCAL-00020" summary="cart service">
+      <created>1669379958081</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1669379958081</updated>
+    </task>
+    <task id="LOCAL-00021" summary="mysql service">
+      <created>1669383028322</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1669383028322</updated>
+    </task>
+    <task id="LOCAL-00022" summary="mysql service">
+      <created>1669383111768</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1669383111768</updated>
+    </task>
+    <task id="LOCAL-00023" summary="mysql service">
+      <created>1669552010984</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1669552010984</updated>
+    </task>
+    <task id="LOCAL-00024" summary="mysql service">
+      <created>1669552859703</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1669552859703</updated>
+    </task>
+    <task id="LOCAL-00025" summary="mysql service">
+      <created>1669555234516</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1669555234516</updated>
+    </task>
+    <task id="LOCAL-00026" summary="mysql service">
+      <created>1669555627377</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1669555627377</updated>
+    </task>
+    <task id="LOCAL-00027" summary="mysql service">
+      <created>1669556453976</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1669556453976</updated>
+    </task>
+    <task id="LOCAL-00028" summary="mysql service">
+      <created>1669556694235</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1669556694235</updated>
+    </task>
+    <task id="LOCAL-00029" summary="mysql service">
+      <created>1669556707563</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1669556707563</updated>
+    </task>
+    <task id="LOCAL-00030" summary="mysql service">
+      <created>1669557105429</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1669557105429</updated>
+    </task>
+    <task id="LOCAL-00031" summary="mysql service">
+      <created>1669557191484</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1669557191484</updated>
+    </task>
+    <task id="LOCAL-00032" summary="mysql service">
+      <created>1669557292411</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1669557292411</updated>
+    </task>
+    <task id="LOCAL-00033" summary="mysql service">
+      <created>1669557382258</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1669557382258</updated>
+    </task>
+    <task id="LOCAL-00034" summary="mysql service">
+      <created>1669557612627</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1669557612627</updated>
+    </task>
+    <task id="LOCAL-00035" summary="mysql service">
+      <created>1669557872137</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1669557872137</updated>
+    </task>
+    <task id="LOCAL-00036" summary="mysql service">
+      <created>1669557930752</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1669557930752</updated>
+    </task>
+    <task id="LOCAL-00037" summary="mysql service">
+      <created>1669562362217</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1669562362217</updated>
+    </task>
+    <task id="LOCAL-00038" summary="mysql service">
+      <created>1669562597624</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1669562597624</updated>
+    </task>
+    <task id="LOCAL-00039" summary="mysql service">
+      <created>1669562663232</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1669562663232</updated>
+    </task>
+    <task id="LOCAL-00040" summary="mysql service">
+      <created>1669563371410</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1669563371410</updated>
+    </task>
+    <task id="LOCAL-00041" summary="mysql service">
+      <created>1669614180059</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1669614180059</updated>
+    </task>
+    <task id="LOCAL-00042" summary="mysql service">
+      <created>1669614365268</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1669614365268</updated>
+    </task>
+    <task id="LOCAL-00043" summary="mysql service">
+      <created>1669614471609</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1669614471609</updated>
+    </task>
+    <task id="LOCAL-00044" summary="variable with functions">
+      <created>1669646374667</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1669646374667</updated>
+    </task>
+    <task id="LOCAL-00045" summary="variable with functions">
+      <created>1669646944252</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1669646944252</updated>
+    </task>
+    <task id="LOCAL-00046" summary="variable with functions">
+      <created>1669647027737</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1669647027737</updated>
+    </task>
+    <task id="LOCAL-00047" summary="mysql with variables">
+      <created>1669647926011</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1669647926011</updated>
+    </task>
+    <task id="LOCAL-00048" summary="mysql with variables and functions">
+      <created>1669648559401</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1669648559401</updated>
+    </task>
+    <task id="LOCAL-00049" summary="mysql with variables and functions">
+      <created>1669648952374</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1669648952374</updated>
+    </task>
+    <task id="LOCAL-00050" summary="mysql with variables and functions">
+      <created>1669649104802</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1669649104802</updated>
+    </task>
+    <task id="LOCAL-00051" summary="mysql with variables and functions">
+      <created>1669649545289</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1669649545289</updated>
+    </task>
+    <task id="LOCAL-00052" summary="mysql with variables and functions">
+      <created>1669649704955</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1669649704956</updated>
+    </task>
+    <task id="LOCAL-00053" summary="common script with variables and functions">
+      <created>1669650749944</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1669650749944</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="frontend service" />
+    <MESSAGE value="mongodb service" />
+    <MESSAGE value="catalouge service" />
+    <MESSAGE value="redis service" />
+    <MESSAGE value="user service" />
+    <MESSAGE value="cart service" />
+    <MESSAGE value="mysql service" />
+    <MESSAGE value="variable with functions" />
+    <MESSAGE value="mysql with variables" />
+    <MESSAGE value="mysql with variables and functions" />
+    <MESSAGE value="common script with variables and functions" />
+    <option name="LAST_COMMIT_MESSAGE" value="common script with variables and functions" />
+  </component>
+</project>

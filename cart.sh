@@ -9,7 +9,7 @@
 
 
 #On CentOS-8
-
+source common.sh
 curl -sL https://rpm.nodesource.com/setup_lts.x | bash
 yum install nodejs -y
 
@@ -25,9 +25,13 @@ useradd roboshop
 curl -s -L -o /tmp/cart.zip "https://github.com/roboshop-devops-project/cart/archive/main.zip"
 cd /home/roboshop
 rm -rf cart
+
+PRINT "EXTRACTING APP CONTENT"
 unzip -o /tmp/cart.zip
 mv cart-main cart
 cd cart
+
+PRINT " INSTALLING REQUIRED DEPENDENCIES FOR APP"
 npm install
 
 
@@ -41,5 +45,7 @@ sed -i -e 's/REDIS_ENDPOINT/redis.happylearning.buzz/' -e 's/CATALOGUE_ENDPOINT/
 
 mv /home/roboshop/cart/systemd.service /etc/systemd/system/cart.service
 systemctl daemon-reload
+
+PRINT "RESTARTING CART SERVICE"
 systemctl restart cart
 systemctl enable cart
