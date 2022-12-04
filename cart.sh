@@ -12,7 +12,7 @@
 
 COMPONENT=cart
 source common.sh
-curl -sL https://rpm.nodesource.com/setup_lts.x | bash  $>>LOG
+curl -sL https://rpm.nodesource.com/setup_lts.x | bash  >>$LOG
 STAT $?
 
 yum install nodejs -y &>>$LOG
