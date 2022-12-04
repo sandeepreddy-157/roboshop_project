@@ -9,9 +9,10 @@
 
 
 #On CentOS-8
+
 COMPONENT=cart
 source common.sh
-curl -sL https://rpm.nodesource.com/setup_lts.x | bash
+curl -sL https://rpm.nodesource.com/setup_lts.x | bash  $>>LOG
 STAT $?
 
 yum install nodejs -y &>>$LOG
@@ -39,13 +40,14 @@ PRINT " INSTALLING REQUIRED DEPENDENCIES FOR APP"
 npm install &>>LOG
 STAT $?
 
-#1. Update SystemD service file
-#Update `REDIS_ENDPOINT` with REDIS server IP Address
-#Update `CATALOGUE_ENDPOINT` with Catalogue server IP address
+PRINT "Update SystemD service file"
+PRINT "Update `REDIS_ENDPOINT` with REDIS server IP Address and Update `CATALOGUE_ENDPOINT` with Catalogue server IP address"
 
 sed -i -e 's/REDIS_ENDPOINT/redis.happylearning.buzz/' -e 's/CATALOGUE_ENDPOINT/catalogue.happylearning.buzz/' /home/roboshop/cart/systemd.service $>>LOG
 
 #Now, lets set up the service with systemctl.
+
+PRINT "SET UP THE SERVICE WITH SYSTEMCTL"
 
 mv /home/roboshop/cart/systemd.service /etc/systemd/system/cart.service &>>LOG
 systemctl daemon-reload &>>LOG
@@ -53,6 +55,5 @@ STAT $?
 
 PRINT "RESTARTING CART SERVICE"
 systemctl restart cart &>>LOG
+systemctl enable cart &>>LOG
 STAT $?
-
-systemctl enable cart
