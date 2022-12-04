@@ -13,6 +13,5 @@ PRINT() {
 }
 
 LOG=/tmp/$COMPONENT.log
-
 rm -rf $LOG
 
