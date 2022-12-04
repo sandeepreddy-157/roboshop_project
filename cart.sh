@@ -23,7 +23,7 @@ STAT $?
 #So to run the cart service we choose to run as a normal user and that user name should be more relevant to the project. Hence we will use `roboshop` as the username to run the service.
 PRINT "ADDING ROBOSHOP USER"
 useradd roboshop &>>LOG
-STAT &?
+
 
 
 #So let's switch to the roboshop user and run the following commands to download the application code and download application dependencies
