@@ -9,25 +9,25 @@
 
 
 #On CentOS-8
-COMPONENT=cart
+
 source common.sh
-curl -sL https://rpm.nodesource.com/setup_lts.x | bash &>>$LOG
+curl -sL https://rpm.nodesource.com/setup_lts.x | bash
 STAT $?
 
-yum install nodejs -y &>>$LOG
+yum install nodejs -y
 STAT $?
 #Let's now set up the cart application.
 
 #As part of operating system standards, we run all the applications and databases as a normal user but not with root user.
 #So to run the cart service we choose to run as a normal user and that user name should be more relevant to the project. Hence we will use `roboshop` as the username to run the service.
 
-useradd roboshop &>>$LOG
+useradd roboshop
 
 
 #So let's switch to the roboshop user and run the following commands to download the application code and download application dependencies
 
-curl -s -L -o /tmp/cart.zip "https://github.com/roboshop-devops-project/cart/archive/main.zip" &>>$LOG
-cd /home/roboshop &>>$LOG
+curl -s -L -o /tmp/cart.zip "https://github.com/roboshop-devops-project/cart/archive/main.zip"
+cd /home/roboshop
 rm -rf cart
 
 PRINT "EXTRACTING APP CONTENT"
