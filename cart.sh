@@ -24,7 +24,11 @@ STAT $?
 #As part of operating system standards, we run all the applications and databases as a normal user but not with root user.
 #So to run the cart service we choose to run as a normal user and that user name should be more relevant to the project. Hence we will use `roboshop` as the username to run the service.
 PRINT "ADDING ROBOSHOP USER"
+id roboshop &>>$LOG
+if [ $? -ne 0 ]; then
 useradd roboshop &>>$LOG
+fi
+STAT $?
 
 #So let's switch to the roboshop user and run the following commands to download the application code and download application dependencies
 PRINT "DOWNLOADING THE APPLICATION CODE"
