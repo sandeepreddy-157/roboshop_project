@@ -43,7 +43,7 @@ STAT $?
 PRINT "Update SystemD service file"
 PRINT "Update `REDIS_ENDPOINT` with REDIS server IP Address and Update `CATALOGUE_ENDPOINT` with Catalogue server IP address"
 
-sed -i -e 's/REDIS_ENDPOINT/redis.happylearning.buzz/' -e 's/CATALOGUE_ENDPOINT/catalogue.happylearning.buzz/' /home/roboshop/cart/systemd.service $>>LOG
+sed -i -e 's/REDIS_ENDPOINT/redis.happylearning.buzz/' -e 's/CATALOGUE_ENDPOINT/catalogue.happylearning.buzz/' /home/roboshop/cart/systemd.service >>$LOG
 
 #Now, lets set up the service with systemctl.
 
