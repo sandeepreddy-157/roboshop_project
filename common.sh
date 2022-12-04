@@ -62,8 +62,8 @@ rm -f $LOG
   npm install &>>$LOG
   STAT $?
 
-  PRINT "Configure Endpoints for SystemD Configuration"
-  sed -i -e 's/REDIS_ENDPOINT/cart.happylearning.com/' -e 's/CATALOGUE_ENDPOINT/catalogue.happylearning.com/' /home/roboshop/${COMPONENT}/systemd.service &>>$LOG
+ PRINT "Configure Endpoints for SystemD Configuration"
+ sed -i -e 's/REDIS_ENDPOINT/cart.happylearning.com/' -e 's/CATALOGUE_ENDPOINT/catalogue.happylearning.com/' /home/roboshop/${COMPONENT}/systemd.service &>>$LOG
   mv /home/roboshop/${COMPONENT}/systemd.service /etc/systemd/system/${COMPONENT}.service
   STAT $?
 
