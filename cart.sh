@@ -35,6 +35,7 @@ PRINT "EXTRACTING APP CONTENT"
 unzip -o /tmp/cart.zip &>>$LOG
 mv cart-main cart
 cd cart
+STAT $?
 
 PRINT " INSTALLING REQUIRED DEPENDENCIES FOR APP"
 npm install &>>LOG
