@@ -38,7 +38,7 @@ DOWNLOAD_APP_CODE() {
     rm -rf ${CONTENT} &>>$LOG
     STAT $?
 
-    PRINT "Extracting APP Content and Deploying the downloaded content in Nginx Default Location"
+    PRINT "Extracting APP Content"
     unzip -o /tmp/${COMPONENT}.zip &>>$LOG
     STAT $?
 }
