@@ -1,5 +1,5 @@
-#!/bin/bash
-
+COMPONENT=redis
+source common.sh
 #Redis is used for in-memory data storage and allows users to access the data over API.
 #**Manual Installation of Redis.**
 
