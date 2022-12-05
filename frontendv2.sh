@@ -9,6 +9,7 @@ STAT $?
 APP_LOC=/usr/share/nginx/html
 
 DOWNLOAD_APP_CODE
+exit
 
 sudo systemctl enable nginx
 sudo systemctl start nginx

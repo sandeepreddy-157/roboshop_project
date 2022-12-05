@@ -58,7 +58,7 @@ DOWNLOAD_APP_CODE() {
     STAT $?
 
   DOWNLOAD_APP_CODE
-  exit
+
 
   mv ${COMPONENT}-main ${COMPONENT}
   cd ${COMPONENT}
