@@ -28,11 +28,27 @@ STAT() {
 LOG=/tmp/$COMPONENT.log
 rm -f $LOG
 
+DOWNLOAD_APP_CODE() {
+  PRINT "Download App Content"
+    curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/roboshop-devops-project/${COMPONENT}/archive/main.zip" &>>$LOG
+    STAT $?
+
+    PRINT "Remove Previous Version of App and "
+    cd ${APP_LOC} &>>$LOG
+    rm -rf ${CONTENT} &>>$LOG
+    STAT $?
+
+    PRINT "Extracting App Content"
+    unzip -o /tmp/${COMPONENT}.zip &>>$LOG
+    STAT $?
+}
+
  NODEJS() {
+   APP_LOC=/home/roboshop
+   CONTENT=$COMPONENT
    PRINT "Install NodeJS Repos"
    curl -sL https://rpm.nodesource.com/setup_lts.x | bash &>>$LOG
    STAT $?
-
 
     PRINT "Adding Application User"
     id roboshop &>>$LOG
@@ -41,19 +57,8 @@ rm -f $LOG
     fi
     STAT $?
 
-
-  PRINT "Download App Content"
-  curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/roboshop-devops-project/${COMPONENT}/archive/main.zip" &>>$LOG
-  STAT $?
-
-  PRINT "Remove Previous Version of App"
-  cd /home/roboshop &>>$LOG
-  rm -rf ${COMPONENT} &>>$LOG
-  STAT $?
-
-  PRINT "Extracting App Content"
-  unzip -o /tmp/${COMPONENT}.zip &>>$LOG
-  STAT $?
+  DOWNLOAD_APP_CODE
+  exit
 
   mv ${COMPONENT}-main ${COMPONENT}
   cd ${COMPONENT}
@@ -63,7 +68,7 @@ rm -f $LOG
   STAT $?
 
  PRINT "Configure Endpoints for SystemD Configuration"
- sed -i -e 's/REDIS_ENDPOINT/cart.happylearning.com/' -e 's/CATALOGUE_ENDPOINT/catalogue.happylearning.com/' /home/roboshop/${COMPONENT}/systemd.service &>>$LOG
+ sed -i -e 's/MONGO_DNSNAME/dev-mongodb.happylearning.buzz/' -e 's/REDIS_ENDPOINT/dev-redis.happylearning.buzz/' -e 's/CATALOGUE_ENDPOINT/dev-catalogue.happylearning.buzz/' -e 's/MONGO_ENDPOINT/dev-mongodb.happylearning.buzz/' -e 's/CARTENDPOINT/dev-cart.happylearning.buzz/' -e 's/DBHOST/dev-mysql.happylearning.buzz/' -e 's/AMQPHOST/dev-rabbitmq.happylearning.buzz/' -e 's/CARTHOST/dev-cart.happylearning.buzz/' -e 's/USERHOST/dev-user.happylearning.buzz/' /home/roboshop/${COMPONENT}/systemd.service &>>$LOG
   mv /home/roboshop/${COMPONENT}/systemd.service /etc/systemd/system/${COMPONENT}.service
   STAT $?
 
