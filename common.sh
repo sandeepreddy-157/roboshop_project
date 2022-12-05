@@ -33,12 +33,12 @@ DOWNLOAD_APP_CODE() {
     curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/roboshop-devops-project/${COMPONENT}/archive/main.zip" &>>$LOG
     STAT $?
 
-    PRINT "Remove Previous Version of App and "
+    PRINT "Remove Previous Version of App "
     cd ${APP_LOC} &>>$LOG
     rm -rf ${CONTENT} &>>$LOG
     STAT $?
 
-    PRINT "Extracting App Content"
+    PRINT "Extracting APP Content and Deploying the downloaded content in Nginx Default Location"
     unzip -o /tmp/${COMPONENT}.zip &>>$LOG
     STAT $?
 }
