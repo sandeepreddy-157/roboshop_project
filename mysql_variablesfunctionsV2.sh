@@ -10,6 +10,9 @@
 
 #On Centos-8
 
+COMPONENT=mysql
+source common.sh
+
 if [ -z '$1']; then
   echo input argument password is needed
   exit 1
@@ -30,7 +33,7 @@ PRINT() {
   echo -e "\e[33m$1\e[0m"
 }
 PRINT -e "\e[31m DOWNLOADING MYSQL REPO FILE\e[0m"
-curl -s -L -o /etc/yum.repos.d/mysql.repo https://raw.githubusercontent.com/roboshop-devops-project/mysql/main/mysql.repo &>>$LOG
+curl -s -L -o /etc/yum.repos.d/mysql.repo https://raw.githubusercontent.com/roboshop-devops-project/mysql/main/mysql.repo  &>>$LOG
 STAT $?
 
 PRINT "DISABLE MODULE FOR MYSQL 8 VERSION REPO"
