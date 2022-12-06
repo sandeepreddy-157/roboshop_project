@@ -29,6 +29,14 @@ LOG=/tmp/$COMPONENT.log
 rm -f $LOG
 
 DOWNLOAD_APP_CODE() {
+  if [ ! -z $APP_USER ]; then
+  PRINT "Adding Application User"
+      id roboshop &>>$LOG
+      if [ $? -ne 0 ]; then
+        useradd roboshop &>>$LOG
+      fi
+      STAT $?
+
   PRINT "Download App Content"
     curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/roboshop-devops-project/${COMPONENT}/archive/main.zip" &>>$LOG
     STAT $?
@@ -46,6 +54,7 @@ DOWNLOAD_APP_CODE() {
  NODEJS() {
    APP_LOC=/home/roboshop
    CONTENT=$COMPONENT
+   APP_USER=roboshop
    PRINT "Install NodeJS Repos"
    curl -sL https://rpm.nodesource.com/setup_lts.x | bash &>>$LOG
    STAT $?
@@ -67,22 +76,42 @@ DOWNLOAD_APP_CODE() {
   npm install &>>$LOG
   STAT $?
 
- PRINT "Configure Endpoints for SystemD Configuration"
- sed -i -e 's/MONGO_DNSNAME/dev-mongodb.happylearning.buzz/' -e 's/REDIS_ENDPOINT/dev-redis.happylearning.buzz/' -e 's/CATALOGUE_ENDPOINT/dev-catalogue.happylearning.buzz/' -e 's/MONGO_ENDPOINT/dev-mongodb.happylearning.buzz/' -e 's/CARTENDPOINT/dev-cart.happylearning.buzz/' -e 's/DBHOST/dev-mysql.happylearning.buzz/' -e 's/AMQPHOST/dev-rabbitmq.happylearning.buzz/' -e 's/CARTHOST/dev-cart.happylearning.buzz/' -e 's/USERHOST/dev-user.happylearning.buzz/' /home/roboshop/${COMPONENT}/systemd.service &>>$LOG
-  mv /home/roboshop/${COMPONENT}/systemd.service /etc/systemd/system/${COMPONENT}.service
-  STAT $?
-
-   PRINT "reload systemd"
-   systemctl daemon-reload &>>$LOG
-   STAT $?
-
-   PRINT "RESTART ${COMPONENT}"
-   systemctl restart ${COMPONENT} &>>$LOG
-    STAT $?
-
-   PRINT "ENABLE ${COMPONENT} SERVICE"
-   systemctl enable ${COMPONENT} &>>$LOG
-   STAT $?
+  SYSTEMD_SETUP
 
 }
 
+SYSTEMD_SETUP() {
+   PRINT "Configure Endpoints for SystemD Configuration"
+   sed -i -e 's/MONGO_DNSNAME/dev-mongodb.happylearning.buzz/' -e 's/REDIS_ENDPOINT/dev-redis.happylearning.buzz/' -e 's/CATALOGUE_ENDPOINT/dev-catalogue.happylearning.buzz/' -e 's/MONGO_ENDPOINT/dev-mongodb.happylearning.buzz/' -e 's/CARTENDPOINT/dev-cart.happylearning.buzz/' -e 's/DBHOST/dev-mysql.happylearning.buzz/' -e 's/AMQPHOST/dev-rabbitmq.happylearning.buzz/' -e 's/CARTHOST/dev-cart.happylearning.buzz/' -e 's/USERHOST/dev-user.happylearning.buzz/' /home/roboshop/${COMPONENT}/systemd.service &>>$LOG
+   mv /home/roboshop/${COMPONENT}/systemd.service /etc/systemd/system/${COMPONENT}.service
+   STAT $?
+
+    PRINT "reload systemd"
+    systemctl daemon-reload &>>$LOG
+    STAT $?
+
+    PRINT "RESTART ${COMPONENT}"
+    systemctl restart ${COMPONENT} &>>$LOG
+     STAT $?
+
+    PRINT "ENABLE ${COMPONENT} SERVICE"
+    systemctl enable ${COMPONENT} &>>$LOG
+    STAT $?
+
+}
+JAVA() {
+   APP_LOC=/home/roboshop
+   CONTENT=$COMPONENT
+   APP_USER=roboshop
+PRINT " INSTALLING MAVEN "
+ yum install maven -y &>>$LOG
+ STAT $?
+
+ DOWNLOAD_APP_CODE
+
+ PRINT "DOWNLOAD MAVEN DEPENDENCIES"
+ mvn clean package && mv target/${COMPONENT}-1.0.jar ${COMPONENT}.jar &>>$LOG
+ STAT $?
+
+ SYSTEMD_SETUP
+}
