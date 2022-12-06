@@ -1,4 +1,4 @@
-#MySQL is the database service which is needed for the application. So we need to install it and configure it for the application to work.
+MySQL is the database service which is needed for the application. So we need to install it and configure it for the application to work.
 ## **Manual Steps to Install MySQL**
 
 #As per the Application need, we are choosing MySQL 5.7 version.
@@ -30,35 +30,35 @@ PRINT() {
   echo -e "\e[33m$1\e[0m"
 }
 PRINT -e "\e[31m DOWNLOADING MYSQL REPO FILE\e[0m"
-curl -s -L -o /etc/yum.repos.d/mysql.repo https://raw.githubusercontent.com/roboshop-devops-project/mysql/main/mysql.repo &>>$LOG
+curl -s -L -o /etc/yum.repos.d/mysql.repo https://raw.githubusercontent.com/roboshop-devops-project/mysql/main/mysql.repo
 STAT $?
 
 PRINT "DISABLE MODULE FOR MYSQL 8 VERSION REPO"
-dnf module disable mysql -y &>>$LOG
+dnf module disable mysql -y
 STAT $?
 
 #Install MySQL
 
 PRINT "INSTALLING MYSQL SERVER"
-yum install mysql-community-server -y &>>$LOG
+yum install mysql-community-server -y
 STAT $?
 
 #Start MySQL
 PRINT "ENABLING MYSQL SERVICE"
-systemctl enable mysqld &>>$LOG
+systemctl enable mysqld
 STAT $?
 
 PRINT "START MYSQL SERVICE"
 
-systemctl start mysqld &>>$LOG
+systemctl start mysqld
 STAT $?
 
-echo show databases | mysql -uroot -p${ROBOSHOP_MYSQL_PASSWORD}  &>>$LOG
+echo show databases | mysql -uroot -p${ROBOSHOP_MYSQL_PASSWORD}
 if [ $? -ne 0 ]
 then
   echo "ALTER USER 'root'@'localhost' IDENTIFIED BY '${ROBOSHOP_MYSQL_PASSWORD}';" > /tmp/root-pass-sql
   DEFAULT_PASSWORD=$(sudo grep 'A temporary password' /var/log/mysqld.log | awk '{print $NF}')
-  cat /tmp/root-pass-sql | mysql --connect-expired-password -uroot -p"${DEFAULT_PASSWORD}" &>>$LOG
+  cat /tmp/root-pass-sql | mysql --connect-expired-password -uroot -p"${DEFAULT_PASSWORD}"
 fi
 
 #while executing we need to pri
