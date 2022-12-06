@@ -112,6 +112,8 @@ PRINT " INSTALLING MAVEN "
 
  DOWNLOAD_APP_CODE
 
+ cd ${COMPONENT}
+
  PRINT "DOWNLOAD MAVEN DEPENDENCIES"
  mvn clean package && mv target/${COMPONENT}-1.0.jar ${COMPONENT}.jar &>>$LOG
  STAT $?
