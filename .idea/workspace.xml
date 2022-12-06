@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3a98010-ea6c-4a94-b205-531f0bdb320c" name="Changes" comment="mongodb service version2 for roboshop project">
-      <change afterPath="$PROJECT_DIR$/mysqlv2.sh" afterDir="false" />
+    <list default="true" id="c3a98010-ea6c-4a94-b205-531f0bdb320c" name="Changes" comment="MYSQL service version2 for roboshop project">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysql_variablesfunctionsV2.sh" beforeDir="false" afterPath="$PROJECT_DIR$/mysql_variablesfunctionsV2.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysqlv2.sh" beforeDir="false" afterPath="$PROJECT_DIR$/mysqlv2.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,27 +65,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1668958541921</updated>
-    </task>
-    <task id="LOCAL-00039" summary="mysql service">
-      <created>1669562663232</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1669562663232</updated>
-    </task>
-    <task id="LOCAL-00040" summary="mysql service">
-      <created>1669563371410</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1669563371410</updated>
-    </task>
-    <task id="LOCAL-00041" summary="mysql service">
-      <created>1669614180059</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1669614180059</updated>
     </task>
     <task id="LOCAL-00042" summary="mysql service">
       <created>1669614365268</created>
@@ -410,7 +388,28 @@
       <option name="project" value="LOCAL" />
       <updated>1670254858534</updated>
     </task>
-    <option name="localTasksCounter" value="88" />
+    <task id="LOCAL-00088" summary="MYSQL service version2 for roboshop project">
+      <created>1670332950100</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1670332950100</updated>
+    </task>
+    <task id="LOCAL-00089" summary="MYSQL service version2 for roboshop project">
+      <created>1670333070586</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1670333070586</updated>
+    </task>
+    <task id="LOCAL-00090" summary="MYSQL service version2 for roboshop project">
+      <created>1670333246435</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1670333246435</updated>
+    </task>
+    <option name="localTasksCounter" value="91" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -442,6 +441,7 @@
     <MESSAGE value="common service for roboshop project" />
     <MESSAGE value="common service version2 for roboshop project" />
     <MESSAGE value="mongodb service version2 for roboshop project" />
-    <option name="LAST_COMMIT_MESSAGE" value="mongodb service version2 for roboshop project" />
+    <MESSAGE value="MYSQL service version2 for roboshop project" />
+    <option name="LAST_COMMIT_MESSAGE" value="MYSQL service version2 for roboshop project" />
   </component>
 </project>
