@@ -14,25 +14,13 @@ COMPONENT=mysql
 source common.sh
 
 if [ -z '$1']; then
-  echo input argument password is needed
+  echo "input argument password is needed"
   exit 1
 fi
 ROBOSHOP_MYSQL_PASSWORD=$1
 
-STAT() {
-  if [ $1 -eq 0 ]
-  then
-    echo -e "\e[32m SUCCESS\e[0m"
-  else
-    echo -e "\e[31m FAILURE\e[0m"
-    exit 1
-  fi
-}
 
-PRINT() {
-  echo -e "\e[33m$1\e[0m"
-}
-PRINT -e "\e[31m DOWNLOADING MYSQL REPO FILE\e[0m"
+PRINT "DOWNLOADING MYSQL REPO FILE"
 curl -s -L -o /etc/yum.repos.d/mysql.repo https://raw.githubusercontent.com/roboshop-devops-project/mysql/main/mysql.repo  &>>$LOG
 STAT $?
 
