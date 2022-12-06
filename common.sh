@@ -36,6 +36,7 @@ DOWNLOAD_APP_CODE() {
           useradd roboshop &>>$LOG
         fi
         STAT $?
+       fi
 
       PRINT "Download App Content"
       curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/roboshop-devops-project/${COMPONENT}/archive/main.zip" &>>$LOG
