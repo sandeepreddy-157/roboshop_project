@@ -103,20 +103,23 @@ SYSTEMD_SETUP() {
 
 }
 JAVA() {
-   APP_LOC=/home/roboshop
-   CONTENT=$COMPONENT
-   APP_USER=roboshop
-PRINT " INSTALLING MAVEN "
- yum install maven -y &>>$LOG
- STAT $?
+  APP_LOC=/home/roboshop
+  CONTENT=$COMPONENT
+  APP_USER=roboshop
 
- DOWNLOAD_APP_CODE
+  PRINT "Install Maven"
+  yum install maven -y  &>>$LOG
+  STAT $?
 
- cd ${COMPONENT}
+  DOWNLOAD_APP_CODE
 
- PRINT "DOWNLOAD MAVEN DEPENDENCIES"
- mvn clean package && mv target/${COMPONENT}-1.0.jar ${COMPONENT}.jar &>>$LOG
- STAT $?
+  mv ${COMPONENT}-main ${COMPONENT}
+  cd ${COMPONENT}
 
- SYSTEMD_SETUP
+  PRINT "Download Maven Dependencies"
+  mvn clean package &>>$LOG  && mv target/$COMPONENT-1.0.jar $COMPONENT.jar &>>$LOG
+  STAT $?
+
+  SYSTEMD_SETUP
+
 }
