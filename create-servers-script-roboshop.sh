@@ -18,7 +18,7 @@ create_ec2() {
       | jq '.Instances[].PrivateIpAddress' | sed -e 's/"//g')
 
   sed -e "s/IPADDRESS/${PRIVATE_IP}/" -e "s/COMPONENT/${COMPONENT}/" route53.json >/tmp/record.json
-  aws route53 change-resource-record-sets --hosted-zone-id ${ZONE_ID} --change-batch file://tmp/record.json | jq
+  aws route53 change-resource-record-sets --hosted-zone-id Z089812127OMAA4TA25OA \ --change-batch file:///tmp/record.json | jq
 }
 
 
@@ -36,7 +36,7 @@ if [ -z "${SGID}" ]; then
 fi
 
 
-for component in catalogue cart user shipping payment frontend mongodb mysql rabbitmq redis dispatch; do
+for component in catalogue cart; do
   COMPONENT="${env}-${component}"
   create_ec2
 done
