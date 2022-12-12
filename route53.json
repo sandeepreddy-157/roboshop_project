@@ -9,4 +9,3 @@
       "ResourceRecords": [{ "Value": "IPADDRESS"}]
     }}]
 }
-#this is for route53
