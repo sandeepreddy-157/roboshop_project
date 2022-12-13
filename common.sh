@@ -125,7 +125,6 @@ JAVA() {
 }
 
 RABBITMQ_USER() {
-  APP_USER=roboshop
 
   if [ ! -z  "$APP_USER" ]; then
       PRINT "Adding Application User"
