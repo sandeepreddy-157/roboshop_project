@@ -2,7 +2,7 @@
 #Erlang is a dependency which is needed for RabbitMQ.
 
 
-COMPONENT=mysql
+COMPONENT=rabbitmq
 source common.sh
 RABBITMQ_APP_USER_PASSWORD=$1
 
