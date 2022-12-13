@@ -1,6 +1,10 @@
 #RabbitMQ is a messaging Queue which is used by some components of the applications.
 #Erlang is a dependency which is needed for RabbitMQ.
+#while executing this script , we need to provide rabbitmq username and password on the commandline
 
+#example  sudo bash rabbitmq.sh roboshop roboshop123
+#here rabbitmq.sh is a script file , roboshop is a username of rabbitmq and roboshop123 is a password of roboshop
+#here $0 means rabbitmq.sh $1 means roboshop $2 means roboshop123
 
 COMPONENT=rabbitmq
 source common.sh
