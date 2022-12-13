@@ -123,3 +123,26 @@ JAVA() {
   SYSTEMD_SETUP
 
 }
+
+RABBITMQ_USER() {
+  APP_USER=roboshop
+
+  if [ ! -z  "$APP_USER" ]; then
+      PRINT "Adding Application User"
+      rabbitmqctl authenticate_user $APP_USER  ${RABBITMQ_APP_USER_PASSWORD}  &>>$LOG
+
+      if [ $? -ne 0 ]; then
+        rabbitmqctl add_user roboshop ${RABBITMQ_APP_USER_PASSWORD}  &>>$LOG
+      fi
+      STAT $?
+    fi
+
+    PRINT "Configure Application User Tags"
+    rabbitmqctl set_user_tags roboshop administrator  &>>$LOG
+    STAT $?
+
+
+    PRINT "Configure Application User Permissions"
+    rabbitmqctl set_permissions -p / roboshop ".*" ".*" ".*"  &>>$LOG
+    STAT $?
+}
