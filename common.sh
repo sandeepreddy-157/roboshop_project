@@ -169,6 +169,6 @@ PYTHON() {
   PRINT "Updating the roboshop user id and group id in payment.ini file"
   User_ID=$(id -u roboshop)
   Group_ID=$(id -g roboshop)
-  sed -i -e 's/$uid/$User_ID/' -e 's/$gid/$Group_ID/' payment.ini &>>LOG
+  sed -i -e "s/$uid/$User_ID/" -e "s/$gid/$Group_ID/" payment.ini &>>LOG
   STAT $?
 }
