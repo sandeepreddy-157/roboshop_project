@@ -166,4 +166,7 @@ PYTHON() {
   pip3 install -r requirements.txt &>>$LOG
   STAT $?
 
+  PRINT "Updating the roboshop user id and group id in payment.ini file"
+  sed -i -e 's/$uid/$User_ID/' -e 's/$gid/$Group_ID/' payment.ini &>>LOG
+  STAT $?
 }
