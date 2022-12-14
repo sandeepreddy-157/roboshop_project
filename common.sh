@@ -69,6 +69,10 @@ DOWNLOAD_APP_CODE() {
     fi
     STAT $?
 
+      PRINT "Install NodeJS"
+      yum install nodejs -y &>>$LOG
+      STAT $?
+
   DOWNLOAD_APP_CODE
 
 
