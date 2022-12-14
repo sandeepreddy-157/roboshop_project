@@ -89,7 +89,7 @@ DOWNLOAD_APP_CODE() {
 
 SYSTEMD_SETUP() {
    PRINT "Configure Endpoints for SystemD Configuration"
-   sed -i -e 's/MONGO_DNSNAME/dev-mongodb.happylearning.buzz/' -e 's/REDIS_ENDPOINT/dev-redis.happylearning.buzz/' -e 's/CATALOGUE_ENDPOINT/dev-catalogue.happylearning.buzz/' -e 's/MONGO_ENDPOINT/dev-mongodb.happylearning.buzz/' -e 's/CARTENDPOINT/dev-cart.happylearning.buzz/' -e 's/DBHOST/dev-mysql.happylearning.buzz/' -e 's/AMQPHOST/dev-rabbitmq.happylearning.buzz/' -e 's/CARTHOST/dev-cart.happylearning.buzz/' -e 's/USERHOST/dev-user.happylearning.buzz/' -e 's/REDIS_HOST/dev-redis.happylearning.buzz/' -e 's/CATALOGUE_HOST/dev-catalogue.happylearning.buzz/' /home/roboshop/${COMPONENT}/systemd.service &>>$LOG
+   sed -i -e 's/MONGO_DNSNAME/dev-mongodb.happylearning.buzz/' -e 's/REDIS_ENDPOINT/dev-redis.happylearning.buzz/' -e 's/CATALOGUE_ENDPOINT/dev-catalogue.happylearning.buzz/' -e 's/MONGO_ENDPOINT/dev-mongodb.happylearning.buzz/' -e 's/CARTENDPOINT/dev-cart.happylearning.buzz/' -e 's/DBHOST/dev-mysql.happylearning.buzz/' -e 's/AMQPHOST/dev-rabbitmq.happylearning.buzz/' -e 's/CARTHOST/dev-cart.happylearning.buzz/' -e 's/USERHOST/dev-user.happylearning.buzz/'  /home/roboshop/${COMPONENT}/systemd.service &>>$LOG
    mv /home/roboshop/${COMPONENT}/systemd.service /etc/systemd/system/${COMPONENT}.service
    STAT $?
 
