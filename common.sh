@@ -171,4 +171,6 @@ PYTHON() {
   Group_ID=$(id -g roboshop)
   sed -i -e "/uid/ c uid=${User_ID}" -e "/gid/ c gid=${Group_ID}" ${COMPONENT}.ini &>>LOG
   STAT $?
+
+  SYSTEMD_SETUP
 }
