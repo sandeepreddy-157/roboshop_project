@@ -150,7 +150,8 @@ PYTHON() {
     APP_LOC=/home/roboshop
     CONTENT=$COMPONENT
     APP_USER=roboshop
-
+    User_ID= id -u roboshop
+    Group_ID= id -g roboshop
   PRINT "INSTALLING PYTHON-3"
   yum install python36 gcc python3-devel -y &>>LOG
   STAT $?
