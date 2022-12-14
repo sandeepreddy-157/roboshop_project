@@ -145,3 +145,25 @@ RABBITMQ_USER() {
     rabbitmqctl set_permissions -p / roboshop ".*" ".*" ".*"  &>>$LOG
     STAT $?
 }
+
+PYTHON() {
+    APP_LOC=/home/roboshop
+    CONTENT=$COMPONENT
+    APP_USER=roboshop
+
+  PRINT "INSTALLING PYTHON-3"
+  yum install python36 gcc python3-devel -y &>>LOG
+  STAT $?
+
+  DOWNLOAD_APP_CODE
+
+  mv ${COMPONENT}-main ${COMPONENT}
+
+  cd ${COMPONENT}
+
+  PRINT "INSTALLING DEPENDENCIES"
+
+  pip3 install -r requirements.txt &>>$LOG
+  STAT $?
+
+}
