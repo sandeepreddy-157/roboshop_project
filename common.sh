@@ -62,19 +62,11 @@ DOWNLOAD_APP_CODE() {
    curl -sL https://rpm.nodesource.com/setup_lts.x | bash &>>$LOG
    STAT $?
 
-    PRINT "Adding Application User"
-    id roboshop &>>$LOG
-    if [ $? -ne 0 ]; then
-      useradd roboshop &>>$LOG
-    fi
-    STAT $?
-
-      PRINT "Install NodeJS"
-      yum install nodejs -y &>>$LOG
-      STAT $?
+  PRINT "Install NodeJS"
+  yum install nodejs -y &>>$LOG
+   STAT $?
 
   DOWNLOAD_APP_CODE
-
 
   mv ${COMPONENT}-main ${COMPONENT}
   cd ${COMPONENT}
