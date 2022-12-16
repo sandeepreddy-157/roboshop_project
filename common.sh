@@ -170,3 +170,35 @@ PYTHON() {
 
   SYSTEMD_SETUP
 }
+
+GOLONG() {
+
+       APP_LOC=/home/roboshop
+      CONTENT=$COMPONENT
+      APP_USER=roboshop
+
+  #Dispatch is the service which dispatches the product after purchase. It is written in GoLang, So wanted to install GoLang.
+  PRINT "Installing  GoLang"
+  yum install golang -y &>>LOG
+  STAT $?
+
+ DOWNLOAD_APP_CODE
+
+ mv ${COMPONENT}-main ${COMPONENT}
+   cd ${COMPONENT}
+
+PRINT "creating module dispatch"
+   go mod init dispatch &>>LOG
+   STAT $?
+
+PRINT "installing executables"
+go get &>>LOG
+STAT $?
+
+PRINT "compile the packages and dependencies"
+go build &>>LOG
+STAT $?
+
+SYSTEMD_SETUP
+
+}
